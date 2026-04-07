@@ -571,19 +571,24 @@ footer {
   </div>
 </section>
 
-<!-- LATEST SINGLE -->
-<section style="background:#090806;border-top:1px solid rgba(200,168,75,0.25);border-bottom:1px solid rgba(200,168,75,0.12);padding:2.2rem 0;">
-  <div style="max-width:960px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;">
-    <img src="https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/thick-and-thin-cover.png" alt="Thick & Thin" style="width:130px;height:130px;object-fit:cover;box-shadow:0 6px 28px rgba(0,0,0,0.75);flex-shrink:0;">
-    <div>
-      <div style="font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(200,168,75,1);margin-bottom:0.5rem;">Latest Single</div>
-      <div style="font-size:1.55rem;font-weight:600;line-height:1.1;color:#fff;margin-bottom:0.2rem;">Thick & Thin</div>
-      <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:1.1rem;">Parsons Cross</div>
-      <button onclick="playTrack('thick')" style="padding:0.6rem 1.75rem;background:rgba(200,168,75,1);color:#000;border:none;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;font-weight:700;">&#9654;&nbsp; Play Now</button>
-    </div>
-  </div>
-</section>
 
+<!-- LATEST SINGLE -->
+<section id="latest-single-featured" style="background:var(--ink,#09080F);padding:5rem 0;border-top:1px solid rgba(200,168,60,0.12);position:relative;z-index:1;">
+<div style="text-align:center;padding:0 2rem 3.5rem;">
+<div style="font-family:'Oswald',sans-serif;font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold,#C8A83C);margin-bottom:0.75rem;">Latest Single</div>
+<h2 id="latest-title" style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:0.06em;text-transform:uppercase;color:var(--white,var(--cream,#F0EDE0));">Thick & Thin</h2>
+<div style="width:60px;height:2px;margin:1.2rem auto 0;background:var(--gold,#C8A83C);"></div>
+</div>
+<div id="latest-parsons-cross" style="max-width:1040px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:380px 1fr;gap:4rem;align-items:center;">
+<div><img src="https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/thick-and-thin-cover.png" alt="Thick & Thin" id="latest-cover" style="width:100%;aspect-ratio:1;object-fit:cover;display:block;box-shadow:0 0 60px rgba(200,168,60,0.25),0 24px 64px rgba(0,0,0,0.8);"></div>
+<div style="padding-top:0.5rem;">
+<div style="display:inline-block;font-family:'Oswald',sans-serif;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold,#C8A83C);border:1px solid rgba(200,168,60,0.4);padding:0.25rem 0.85rem;margin-bottom:1.2rem;">Latest Single</div>
+<h2 style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;letter-spacing:0.06em;line-height:1.1;margin-bottom:0.5rem;color:var(--white,var(--cream,#F0EDE0));">Thick & Thin</h2>
+<div style="font-family:'Oswald',sans-serif;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mist,#888880);margin-bottom:2rem;">Parsons Cross</div>
+<button class="play-single-btn" onclick="playTrack('latest')" style="display:inline-flex;align-items:center;gap:0.75rem;background:transparent;color:var(--gold,#C8A83C);border:1px solid rgba(200,168,60,0.45);cursor:pointer;padding:0.85rem 2rem;font-family:'Oswald',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">&#9654;&nbsp; Play Now</button>
+</div>
+</div>
+</section>
 <!-- OUT OF THE DARKNESS -->
 <section id="darkness" class="album-section">
   <div class="album-layout">
@@ -945,22 +950,20 @@ const nav = document.getElementById('topnav');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
 </script>
 
+
 <script>
-(function() {
-  fetch('https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/latest.json?cb=' + Date.now())
-    .then(r => r.json())
-    .then(data => {
-      // Update section header
-      const eyebrow = document.querySelector('#singles .section-eyebrow');
-      const sectionTitle = document.querySelector('#singles .section-title');
-      if (eyebrow) eyebrow.textContent = 'Latest Single';
-      if (sectionTitle && data.title) sectionTitle.textContent = data.title;
-      // Inject into TRACKS
-      if (data.title && data.audio) {
-        TRACKS['latest'] = { title: data.title, album: data.album || 'Single', src: data.audio };
-      }
-    })
-    .catch(() => {});
+(function(){
+TRACKS["latest"]={title:"Thick & Thin",sub:"Out of the Darkness",src:"https://www.dropbox.com/scl/fi/9nxrgic5bpxagygdhgunh/Parsons-Cross-Thick-Thin-Mastered-MP3-v2.mp3?rlkey=s5x9s5kdfb0lnnxywo46n266w&raw=1"};
+fetch("https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/latest.json?cb="+Date.now())
+.then(r=>r.json())
+.then(data=>{
+var cv=document.getElementById("latest-cover");
+var tt=document.getElementById("latest-title");
+if(cv&&data.image)cv.src=data.image;
+if(tt&&data.title)tt.textContent=data.title;
+if(data.audio)TRACKS["latest"].src=data.audio;
+})
+.catch(function(){});
 })();
 </script>
 </body>

@@ -609,7 +609,7 @@ footer {
     </div>
     <p class="hero-tagline">Songs written in the dark places,<br>because that's where faith does its deepest work.</p>
     <div class="hero-ctas">
-      <button class="cta-primary" onclick="playTrack('circle')">&#9654;&nbsp; Play Circle the Wagons</button>
+      <button class="cta-primary" onclick="playTrack('lost')">&#9654;&nbsp; Play Lost (Where's God)</button>
       <a href="#darkness" class="cta-secondary">Discography</a>
     </div>
   </div>
@@ -634,16 +634,16 @@ footer {
 <section id="latest-single-featured" style="background:var(--ink,#09080F);padding:5rem 0;border-top:1px solid rgba(200,168,60,0.12);position:relative;z-index:1;">
 <div style="text-align:center;padding:0 2rem 3.5rem;">
 <div style="font-family:'Oswald',sans-serif;font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold,#C8A83C);margin-bottom:0.75rem;">Latest Single</div>
-<h2 id="latest-title" style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:0.06em;text-transform:uppercase;color:var(--white,var(--cream,#F0EDE0));">Circle the Wagons</h2>
+<h2 id="latest-title" style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:0.06em;text-transform:uppercase;color:var(--white,var(--cream,#F0EDE0));">Lost (Where's God)</h2>
 <div style="width:60px;height:2px;margin:1.2rem auto 0;background:var(--gold,#C8A83C);"></div>
 </div>
 <div id="latest-parsons-cross" style="max-width:1040px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:380px 1fr;gap:4rem;align-items:center;">
-<div><img src="https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-circle-the-wagons-cover.png" alt="Circle the Wagons" id="latest-cover" style="width:100%;aspect-ratio:1;object-fit:cover;display:block;box-shadow:0 0 60px rgba(200,168,60,0.25),0 24px 64px rgba(0,0,0,0.8);"></div>
+<div><img src="https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-lost-wheres-god-cover.png" alt="Lost (Where's God)" id="latest-cover" style="width:100%;aspect-ratio:1;object-fit:cover;display:block;box-shadow:0 0 60px rgba(200,168,60,0.25),0 24px 64px rgba(0,0,0,0.8);"></div>
 <div style="padding-top:0.5rem;">
 <div style="display:inline-block;font-family:'Oswald',sans-serif;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold,#C8A83C);border:1px solid rgba(200,168,60,0.4);padding:0.25rem 0.85rem;margin-bottom:1.2rem;">Latest Single</div>
-<h2 style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;letter-spacing:0.06em;line-height:1.1;margin-bottom:0.5rem;color:var(--white,var(--cream,#F0EDE0));">Circle the Wagons</h2>
+<h2 style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;letter-spacing:0.06em;line-height:1.1;margin-bottom:0.5rem;color:var(--white,var(--cream,#F0EDE0));">Lost (Where's God)</h2>
 <div style="font-family:'Oswald',sans-serif;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mist,#888880);margin-bottom:2rem;">Parsons Cross</div>
-<button class="play-single-btn" onclick="playTrack('circle')" style="display:inline-flex;align-items:center;gap:0.75rem;background:transparent;color:var(--gold,#C8A83C);border:1px solid rgba(200,168,60,0.45);cursor:pointer;padding:0.85rem 2rem;font-family:'Oswald',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">&#9654;&nbsp; Play Now</button>
+<button class="play-single-btn" onclick="playTrack('lost')" style="display:inline-flex;align-items:center;gap:0.75rem;background:transparent;color:var(--gold,#C8A83C);border:1px solid rgba(200,168,60,0.45);cursor:pointer;padding:0.85rem 2rem;font-family:'Oswald',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">&#9654;&nbsp; Play Now</button>
 </div>
 </div>
 </section>
@@ -794,6 +794,18 @@ footer {
       </div>
       <div class="single-info">
         <div class="single-title">Circle the Wagons</div>
+        <div class="single-sub">Into the Light</div>
+      </div>
+    </div>
+    <div class="single-card" onclick="playTrack('lost')">
+      <div class="single-img-wrap">
+        <img src="https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-lost-wheres-god-cover.png" alt="Lost (Where's God)">
+        <div class="single-play-overlay">
+          <button class="single-play-btn" id="splay_lost">&#9654;</button>
+        </div>
+      </div>
+      <div class="single-info">
+        <div class="single-title">Lost (Where's God)</div>
         <div class="single-sub">Latest Single</div>
       </div>
     </div>
@@ -884,8 +896,14 @@ footer {
         <div class="track-row">
           <span class="track-num">03</span>
           <span class="track-title">Circle the Wagons</span>
-          <span class="track-badge badge-new">Latest Single</span>
+          <span></span>
           <button class="track-play-btn" onclick="playTrack('circle')" id="btn_circle">&#9654;</button>
+        </div>
+        <div class="track-row">
+          <span class="track-num">04</span>
+          <span class="track-title">Lost (Where's God)</span>
+          <span class="track-badge badge-new">Latest Single</span>
+          <button class="track-play-btn" onclick="playTrack('lost')" id="btn_lost">&#9654;</button>
         </div>
       </div>
     </div>
@@ -942,10 +960,11 @@ const TRACKS = {
   moved:    { title: "You Haven't Moved", album: 'Out of the Darkness', src: 'https://www.dropbox.com/scl/fi/5zuhf9wresbop4tup7i0j/parsons-cross-you-havent-moved-mp3.mp3?rlkey=2kry0k6wqz9ohdnv9hr24c3b8&raw=1' },
   waiting:  { title: 'The Waiting Room', album: 'Into the Light', src: 'https://www.dropbox.com/scl/fi/9j3cp9ajsd513fpjro3wo/parsons-cross-the-waiting-room-mp3.mp3?rlkey=9i3suos4ja4o5kalph8pipnd8&raw=1' },
   fear:     { title: 'Fear', album: 'Into the Light', src: 'https://www.dropbox.com/scl/fi/tydai7q6rknk94n1d7wtg/parsons-cross-fear-mp3.mp3?rlkey=7lqwoswtpsob6em8eqd0qo1ay&raw=1' },
-  circle:   { title: 'Circle the Wagons', album: 'Into the Light', src: 'https://www.dropbox.com/scl/fi/zv9z8076a6hc13vm8c67z/parsons-cross-circle-the-wagons-mp3.mp3?rlkey=wtv99unlw7flzrtxodxy2n7ho&raw=1' }
+  circle:   { title: 'Circle the Wagons', album: 'Into the Light', src: 'https://www.dropbox.com/scl/fi/zv9z8076a6hc13vm8c67z/parsons-cross-circle-the-wagons-mp3.mp3?rlkey=wtv99unlw7flzrtxodxy2n7ho&raw=1' },
+  lost:     { title: "Lost (Where's God)", album: 'Into the Light', src: 'https://www.dropbox.com/scl/fi/aucayb7h1iimytjaxapwo/parsons-cross-lost-wheres-god-mp3.mp3?rlkey=fbxd0i8l4hax25r4k6f4fk65s&raw=1' }
 };
 
-const ALBUM_ORDER = ['dnots','ktsy','touching','thick','moved','waiting','fear','circle'];
+const ALBUM_ORDER = ['dnots','ktsy','touching','thick','moved','waiting','fear','circle','lost'];
 const THUMB_SRCS  = {};
 
 // Pre-cache thumb src values from rendered imgs

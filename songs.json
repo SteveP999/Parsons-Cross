@@ -90,9 +90,21 @@
     "artist": "Parsons Cross",
     "album": "Into the Light",
     "albumCover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-into-the-light-cover.png",
-    "type": "Latest Single",
-    "isLatest": true,
+    "type": "Single",
+    "isLatest": false,
     "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-circle-the-wagons-cover.png",
     "audio": "https://www.dropbox.com/scl/fi/zv9z8076a6hc13vm8c67z/parsons-cross-circle-the-wagons-mp3.mp3?rlkey=wtv99unlw7flzrtxodxy2n7ho&st=i4v868b3&raw=1"
+  },
+  {
+    "id": "lost_wheres_god",
+    "num": "09",
+    "title": "Lost (Where's God)",
+    "artist": "Parsons Cross",
+    "album": "Into the Light",
+    "albumCover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-into-the-light-cover.png",
+    "type": "Latest Single",
+    "isLatest": true,
+    "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-lost-wheres-god-cover.png",
+    "audio": "https://www.dropbox.com/scl/fi/aucayb7h1iimytjaxapwo/parsons-cross-lost-wheres-god-mp3.mp3?rlkey=fbxd0i8l4hax25r4k6f4fk65s&raw=1"
   }
 ]

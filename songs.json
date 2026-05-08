@@ -9,7 +9,12 @@
     "type": "Single",
     "isLatest": false,
     "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-dark-nights-of-the-soul-cover.png",
-    "audio": "https://www.dropbox.com/scl/fi/lvy40kvrsreftclicsiie/parsons-cross-dark-nights-of-the-soul-mp3.mp3?rlkey=5lttcugp86qupyaqz4d9vaesr&st=1v9s3pmw&raw=1"
+    "audio": "https://www.dropbox.com/scl/fi/lvy40kvrsreftclicsiie/parsons-cross-dark-nights-of-the-soul-mp3.mp3?rlkey=5lttcugp86qupyaqz4d9vaesr&st=1v9s3pmw&raw=1",
+    "streaming": {
+      "spotify": "https://open.spotify.com/track/4xPhdxLaFDgZ8WRgmwT83a",
+      "apple": "https://music.apple.com/us/album/dark-nights-of-the-soul-radio-edit-single/1879509351",
+      "ytm": "https://music.youtube.com/watch?v=o9zKgY9Sc7Y"
+    }
   },
   {
     "id": "keep_the_son_in_your_eyes",
@@ -21,7 +26,12 @@
     "type": "Single",
     "isLatest": false,
     "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-keep-the-son-in-your-eyes-cover.png",
-    "audio": "https://www.dropbox.com/scl/fi/6futa7hyqu7v61rntvsed/parsons-cross-keep-the-son-in-your-eyes-mp3.mp3?rlkey=tiyf5zck33e0zryg4v8cet64z&st=h8rcaqo8&raw=1"
+    "audio": "https://www.dropbox.com/scl/fi/6futa7hyqu7v61rntvsed/parsons-cross-keep-the-son-in-your-eyes-mp3.mp3?rlkey=tiyf5zck33e0zryg4v8cet64z&st=h8rcaqo8&raw=1",
+    "streaming": {
+      "spotify": "https://open.spotify.com/track/2RvI1BQlpJNfMGJac5t7OP",
+      "apple": "https://music.apple.com/us/song/keep-the-son-in-your-eyes/1879451458",
+      "ytm": "https://music.youtube.com/watch?v=VIDT67rd5Gs"
+    }
   },
   {
     "id": "touching_heaven",
@@ -33,7 +43,13 @@
     "type": "Single",
     "isLatest": false,
     "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-touching-heaven-cover.png",
-    "audio": "https://www.dropbox.com/scl/fi/lsd40kwdipq0sxds5yf7o/parsons-cross-touching-heaven-mp3.mp3?rlkey=yleeswhf1tdhrtxeee43z5mye&st=03sxc3ig&raw=1"
+    "audio": "https://www.dropbox.com/scl/fi/lsd40kwdipq0sxds5yf7o/parsons-cross-touching-heaven-mp3.mp3?rlkey=yleeswhf1tdhrtxeee43z5mye&st=03sxc3ig&raw=1",
+    "streaming": {
+      "spotify": "https://open.spotify.com/track/2EWQsy0t7ubtC0qOjVmoUq",
+      "apple": "https://music.apple.com/us/album/touching-heaven-single/1879442524",
+      "ytm": "https://music.youtube.com/watch?v=zJwtCY7bN5E",
+      "video": "https://youtu.be/PosylKbcMks"
+    }
   },
   {
     "id": "you_havent_moved",
@@ -57,7 +73,12 @@
     "type": "Single",
     "isLatest": false,
     "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-thick-and-thin-cover.png",
-    "audio": "https://www.dropbox.com/scl/fi/9nxrgic5bpxagygdhgunh/parsons-cross-thick-and-thin-mp3.mp3?rlkey=s5x9s5kdfb0lnnxywo46n266w&st=9tn9x1ml&raw=1"
+    "audio": "https://www.dropbox.com/scl/fi/9nxrgic5bpxagygdhgunh/parsons-cross-thick-and-thin-mp3.mp3?rlkey=s5x9s5kdfb0lnnxywo46n266w&st=9tn9x1ml&raw=1",
+    "streaming": {
+      "spotify": "https://open.spotify.com/album/471uwS8eSu1Y8TC5I8ifp5",
+      "apple": "https://music.apple.com/us/album/thick-thin-single/1889830890",
+      "ytm": "https://music.youtube.com/watch?v=BBccjAaSpMw"
+    }
   },
   {
     "id": "the_waiting_room",
@@ -69,7 +90,12 @@
     "type": "Single",
     "isLatest": false,
     "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/covers/parsons-cross-the-waiting-room-cover.png",
-    "audio": "https://www.dropbox.com/scl/fi/9j3cp9ajsd513fpjro3wo/parsons-cross-the-waiting-room-mp3.mp3?rlkey=9i3suos4ja4o5kalph8pipnd8&st=hn2sdhcp&raw=1"
+    "audio": "https://www.dropbox.com/scl/fi/9j3cp9ajsd513fpjro3wo/parsons-cross-the-waiting-room-mp3.mp3?rlkey=9i3suos4ja4o5kalph8pipnd8&st=hn2sdhcp&raw=1",
+    "streaming": {
+      "spotify": "https://open.spotify.com/track/4LMmbqbsAfWbByPMhukOWd",
+      "apple": "https://music.apple.com/us/album/the-waiting-room-single/1879902329",
+      "ytm": "https://music.youtube.com/watch?v=aQtH__C7K00"
+    }
   },
   {
     "id": "fear",

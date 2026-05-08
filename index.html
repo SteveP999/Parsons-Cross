@@ -108,6 +108,8 @@ body{background:var(--bg-primary);color:var(--cream);font-family:'Montserrat',sa
 .album-track-art-play{width:44px;height:44px;border:2px solid var(--accent);background:rgba(8,7,9,0.68);color:var(--accent);font-size:0.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:scale(0.86);transition:opacity 0.25s,transform 0.25s;}
 .album-track-art-card:hover .album-track-art-play,.album-track-art-play.playing{opacity:1;transform:scale(1);}
 .album-track-art-info{padding:0.7rem 0 0;}
+.album-track-art-info .single-streams{margin-top:0.6rem;gap:0.35rem;}
+.album-track-art-info .ss-btn{font-size:0.48rem;padding:0.2rem 0.5rem;}
 .album-track-art-title{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--white);line-height:1.15;}
 .album-track-art-sub{font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist);opacity:0.72;margin-top:0.25rem;}
 
@@ -344,7 +346,8 @@ document.getElementById('p-next').addEventListener('click',()=>{if(!cur||!ORDER.
 document.getElementById('p-bar').addEventListener('click',e=>{if(!audio.duration)return;const r=e.currentTarget.getBoundingClientRect();audio.currentTime=((e.clientX-r.left)/r.width)*audio.duration;});
 document.getElementById('p-vol').addEventListener('input',e=>{audio.volume=+e.target.value;});
 document.getElementById('p-close').addEventListener('click',()=>{audio.pause();player.classList.remove('visible');setTimeout(()=>{player.style.display='none';},350);setAllBtns(cur,false);cur=null;});
-function makeStreamBtns(id){const s=STREAMING[id];if(!s)return'';let h='<div class="single-streams">';if(s.spotify)h+=`<a href="${s.spotify}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-spotify">Spotify</a>`;if(s.apple)h+=`<a href="${s.apple}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-apple">Apple</a>`;if(s.ytm)h+=`<a href="${s.ytm}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-ytm">YT Music</a>`;if(s.video)h+=`<a href="${s.video}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-video">Video</a>`;return h+'</div>';}
+function getStreamingFor(id){const song=getSong(id);return (song&&song.streaming)||STREAMING[id]||{};}
+function makeStreamBtns(id){const s=getStreamingFor(id);if(!s||(!s.spotify&&!s.apple&&!s.ytm&&!s.video))return'';let h='<div class="single-streams">';if(s.spotify)h+=`<a href="${s.spotify}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-spotify">Spotify</a>`;if(s.apple)h+=`<a href="${s.apple}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-apple">Apple</a>`;if(s.ytm)h+=`<a href="${s.ytm}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-ytm">YT Music</a>`;if(s.video)h+=`<a href="${s.video}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-video">Video</a>`;return h+'</div>';}
 function albumSubtitle(name){
   const key = String(name || '').toLowerCase();
   if(key === 'out of the darkness') return 'Debut Album';
@@ -367,6 +370,7 @@ function buildTrackArtGrid(tracks){
           <div class="album-track-art-info">
             <div class="album-track-art-title">${t.title}</div>
             <div class="album-track-art-sub">${t.isLatest ? '<span class="track-badge badge-new">Latest Single</span>' : t.album}</div>
+            ${makeStreamBtns(t.id)}
           </div>
         </div>
       `).join('')}
@@ -388,7 +392,7 @@ function buildAlbums(songs){
   map.forEach((tracks,name)=>{
     const cover=tracks[0].albumCover || tracks[0].cover;
     const isReverse=i%2===1;
-    const str=STREAMING[tracks[0].id]||{};
+    const str=tracks.map(t=>getStreamingFor(t.id)).find(s=>s&&(s.spotify||s.apple||s.ytm))||{};
     const sec=document.createElement('section');
     sec.className='album-section';
 

@@ -95,6 +95,22 @@ body{background:var(--bg-primary);color:var(--cream);font-family:'Montserrat',sa
 .track-play-btn{background:transparent;border:1px solid rgba(200,168,75,0.3);color:var(--accent);width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.65rem;flex-shrink:0;transition:background 0.2s,border-color 0.2s;}
 .track-play-btn:hover{background:var(--gold-glow);border-color:var(--accent);}
 .track-play-btn.playing{background:rgba(200,168,75,0.2);border-color:var(--accent-lt);}
+
+.album-track-art-block{margin-top:2.2rem;padding-top:2rem;border-top:1px solid var(--gold-glow);}
+.album-track-art-heading{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+.album-track-art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:1rem;}
+.album-track-art-card{cursor:pointer;}
+.album-track-art-img-wrap{position:relative;overflow:hidden;aspect-ratio:1;background:var(--black);}
+.album-track-art-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.86);transition:transform 0.35s,filter 0.35s;}
+.album-track-art-card:hover .album-track-art-img-wrap img{transform:scale(1.04);filter:brightness(1);}
+.album-track-art-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,7,9,0);transition:background 0.25s;}
+.album-track-art-card:hover .album-track-art-overlay{background:rgba(8,7,9,0.35);}
+.album-track-art-play{width:44px;height:44px;border:2px solid var(--accent);background:rgba(8,7,9,0.68);color:var(--accent);font-size:0.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:scale(0.86);transition:opacity 0.25s,transform 0.25s;}
+.album-track-art-card:hover .album-track-art-play,.album-track-art-play.playing{opacity:1;transform:scale(1);}
+.album-track-art-info{padding:0.7rem 0 0;}
+.album-track-art-title{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--white);line-height:1.15;}
+.album-track-art-sub{font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist);opacity:0.72;margin-top:0.25rem;}
+
 #singles{background:#0A0E1A;padding:5rem 0;border-top:1px solid var(--gold-glow);}
 .singles-grid{max-width:1080px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;}
 .single-card{position:relative;cursor:pointer;}
@@ -166,7 +182,7 @@ footer{background:var(--black);border-top:1px solid var(--gold-glow);padding:4re
   <ul class="nav-links">
     <li><a href="#bio">About</a></li>
     <li><a href="#albums">Music</a></li>
-    <li><a href="#singles">Singles</a></li>
+    
     <li><a href="https://stevep999.github.io/hello-texas-records/" target="_blank" style="opacity:0.45;font-size:0.62rem;">Hello Texas Records</a></li>
   </ul>
 </nav>
@@ -328,20 +344,95 @@ document.getElementById('p-bar').addEventListener('click',e=>{if(!audio.duration
 document.getElementById('p-vol').addEventListener('input',e=>{audio.volume=+e.target.value;});
 document.getElementById('p-close').addEventListener('click',()=>{audio.pause();player.classList.remove('visible');setTimeout(()=>{player.style.display='none';},350);setAllBtns(cur,false);cur=null;});
 function makeStreamBtns(id){const s=STREAMING[id];if(!s)return'';let h='<div class="single-streams">';if(s.spotify)h+=`<a href="${s.spotify}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-spotify">Spotify</a>`;if(s.apple)h+=`<a href="${s.apple}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-apple">Apple</a>`;if(s.ytm)h+=`<a href="${s.ytm}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-ytm">YT Music</a>`;if(s.video)h+=`<a href="${s.video}" target="_blank" onclick="event.stopPropagation()" class="ss-btn ss-video">Video</a>`;return h+'</div>';}
+function albumSubtitle(name){
+  const key = String(name || '').toLowerCase();
+  if(key === 'out of the darkness') return 'Debut Album';
+  if(key === 'into the light') return 'Album';
+  if(key === 'singles') return 'Singles';
+  return 'Album';
+}
+function buildTrackArtGrid(tracks){
+  return `<div class="album-track-art-block">
+    <div class="album-track-art-heading">Album Tracks</div>
+    <div class="album-track-art-grid">
+      ${tracks.map(t=>`
+        <div class="album-track-art-card" onclick="playById('${t.id}')">
+          <div class="album-track-art-img-wrap">
+            <img src="${t.cover}" alt="${t.title}" loading="lazy">
+            <div class="album-track-art-overlay">
+              <button class="album-track-art-play" data-play-id="${t.id}" onclick="event.stopPropagation();playById('${t.id}')">&#9654;</button>
+            </div>
+          </div>
+          <div class="album-track-art-info">
+            <div class="album-track-art-title">${t.title}</div>
+            <div class="album-track-art-sub">${t.isLatest ? '<span class="track-badge badge-new">Latest Single</span>' : t.album}</div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  </div>`;
+}
 function buildAlbums(songs){
-  const map=new Map();songs.forEach(s=>{if(!map.has(s.album))map.set(s.album,[]);map.get(s.album).push(s);});
-  const container=document.getElementById('albums');container.innerHTML='';
-  let i=0;map.forEach((tracks,name)=>{
-    const cover=tracks[0].albumCover||tracks[0].cover;const isReverse=i%2===1;
+  const map=new Map();
+  songs.forEach(s=>{
+    const album=s.album || 'Singles';
+    if(!map.has(album)) map.set(album,[]);
+    map.get(album).push(s);
+  });
+
+  const container=document.getElementById('albums');
+  container.innerHTML='';
+
+  let i=0;
+  map.forEach((tracks,name)=>{
+    const cover=tracks[0].albumCover || tracks[0].cover;
+    const isReverse=i%2===1;
     const str=STREAMING[tracks[0].id]||{};
-    const sec=document.createElement('section');sec.className='album-section';
-    sec.innerHTML=`<div class="album-layout${isReverse?' reverse':''}"><div><img src="${cover}" alt="${name}" class="album-cover"></div><div class="album-meta"><div class="album-badge">${i===0?'Debut Album':'Album'}</div><h2 class="album-title">${name}</h2><div class="album-artist">${ARTIST}</div><div class="stream-row">${str.spotify?`<a href="${str.spotify}" target="_blank" class="stream-btn">&#9654; Spotify</a>`:''}${str.apple?`<a href="${str.apple}" target="_blank" class="stream-btn">&#9834; Apple Music</a>`:''}${str.ytm?`<a href="${str.ytm}" target="_blank" class="stream-btn">&#9654; YT Music</a>`:''}</div><div class="tracklist">${tracks.map(t=>`<div class="track-row"><span class="track-num">${t.num||''}</span><span class="track-title">${t.title}</span><span>${t.isLatest?'<span class="track-badge badge-new">Latest</span>':''}</span><button class="track-play-btn" data-play-id="${t.id}" onclick="playById('${t.id}')">&#9654;</button></div>`).join('')}</div></div></div>`;
-    container.appendChild(sec);i++;
+    const sec=document.createElement('section');
+    sec.className='album-section';
+
+    sec.innerHTML=`<div class="album-layout${isReverse?' reverse':''}">
+      <div>
+        <img src="${cover}" alt="${name}" class="album-cover">
+      </div>
+      <div class="album-meta">
+        <div class="album-badge">${albumSubtitle(name)}</div>
+        <h2 class="album-title">${name}</h2>
+        <div class="album-artist">${ARTIST}</div>
+        <div class="stream-row">
+          ${str.spotify?`<a href="${str.spotify}" target="_blank" class="stream-btn">&#9654; Spotify</a>`:''}
+          ${str.apple?`<a href="${str.apple}" target="_blank" class="stream-btn">&#9834; Apple Music</a>`:''}
+          ${str.ytm?`<a href="${str.ytm}" target="_blank" class="stream-btn">&#9654; YT Music</a>`:''}
+        </div>
+        <div class="tracklist">
+          ${tracks.map(t=>`<div class="track-row">
+            <span class="track-num">${t.num||''}</span>
+            <span class="track-title">${t.title}</span>
+            <span>${t.isLatest?'<span class="track-badge badge-new">Latest</span>':''}</span>
+            <button class="track-play-btn" data-play-id="${t.id}" onclick="playById('${t.id}')">&#9654;</button>
+          </div>`).join('')}
+        </div>
+        ${buildTrackArtGrid(tracks)}
+      </div>
+    </div>`;
+
+    container.appendChild(sec);
+    i++;
   });
 }
 function buildSingles(songs){
-  document.getElementById('singles-grid').innerHTML=songs.map(s=>`<div class="single-card" onclick="playById('${s.id}')"><div class="single-img-wrap"><img src="${s.cover}" alt="${s.title}" loading="lazy"><div class="single-play-overlay"><button class="single-play-btn" data-play-id="${s.id}">&#9654;</button></div></div><div class="single-info"><div class="single-title">${s.title}</div><div class="single-sub">${s.album}${s.isLatest?' · Latest':''}</div>${makeStreamBtns(s.id)}</div></div>`).join('');
+  const grid=document.getElementById('singles-grid');
+  const section=document.getElementById('singles');
+
+  if(section){
+    section.style.display='none';
+  }
+
+  if(grid){
+    grid.innerHTML='';
+  }
 }
+
 function updateLatest(song){
   if(!song)return;
   document.getElementById('latest-section-title').textContent=song.title;

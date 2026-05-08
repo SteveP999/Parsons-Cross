@@ -30,6 +30,9 @@ body{background:var(--bg-primary);color:var(--cream);font-family:'Montserrat',sa
 .nav-links{display:flex;gap:2.2rem;list-style:none;}
 .nav-links a{color:var(--mist);text-decoration:none;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;transition:color 0.25s;}
 .nav-links a:hover{color:var(--gold-lt);}
+.nav-streams{display:flex;gap:0.45rem;align-items:center;list-style:none;margin-left:0.4rem;}
+.nav-streams a{display:inline-flex;align-items:center;justify-content:center;color:var(--cream);border:1px solid rgba(200,168,75,0.32);background:rgba(8,7,9,0.35);padding:0.28rem 0.55rem;font-size:0.55rem;font-weight:600;letter-spacing:0.11em;text-transform:uppercase;text-decoration:none;line-height:1;transition:border-color 0.2s,color 0.2s,background 0.2s;}
+.nav-streams a:hover{border-color:var(--accent);color:var(--accent-lt);background:var(--gold-glow);}
 .hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:flex-end;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;}
 .hero-vignette{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,7,9,0.35) 0%,rgba(8,7,9,0) 40%,rgba(8,7,9,0) 55%,rgba(8,7,9,0.95) 100%),linear-gradient(to right,rgba(8,7,9,0.5) 0%,transparent 55%);}
@@ -50,6 +53,9 @@ body{background:var(--bg-primary);color:var(--cream);font-family:'Montserrat',sa
 #bio{background:var(--bg-alt);padding-bottom:5rem;}
 .bio-inner{max-width:680px;margin:0 auto;padding:0 2rem;text-align:center;}
 .bio-inner p{color:var(--mist);line-height:1.9;font-size:0.95rem;margin-bottom:1.2rem;}
+.artist-stream-row{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin:0 0 2rem;}
+.artist-stream-btn{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream);text-decoration:none;border:1px solid var(--gold-glow);padding:0.45rem 1.1rem;transition:border-color 0.2s,color 0.2s,background 0.2s;}
+.artist-stream-btn:hover{border-color:var(--accent);color:var(--accent-lt);background:var(--gold-glow);}
 #latest-single{background:var(--bg-section);padding:5rem 0;border-top:1px solid var(--gold-glow);}
 .latest-inner{max-width:1060px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:380px 1fr;gap:4rem;align-items:center;}
 .latest-cover{width:100%;aspect-ratio:1;object-fit:cover;display:block;box-shadow:0 0 60px var(--accent-glow),0 24px 64px rgba(0,0,0,0.8);}
@@ -174,6 +180,10 @@ footer{background:var(--black);border-top:1px solid var(--gold-glow);padding:4re
   .latest-cover{max-width:280px;margin:0 auto;}
   .hero-content{padding:0 1.8rem 3.5rem;}
   .singles-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}
+  #topnav{padding:0 1rem;height:auto;min-height:64px;gap:0.7rem;}
+  .nav-links{gap:0.9rem;align-items:center;flex-wrap:wrap;justify-content:flex-end;}
+  .nav-streams{width:100%;justify-content:flex-end;margin-left:0;}
+  .nav-streams a{font-size:0.5rem;padding:0.25rem 0.42rem;}
   #player{grid-template-columns:1fr;gap:0.5rem;}
   .p-track-info{display:none;}
 }
@@ -185,7 +195,11 @@ footer{background:var(--black);border-top:1px solid var(--gold-glow);padding:4re
   <ul class="nav-links">
     <li><a href="#bio">About</a></li>
     <li><a href="#albums">Music</a></li>
-    
+    <li class="nav-streams" aria-label="Parsons Cross streaming links">
+      <a href="https://open.spotify.com/artist/0VMuwXYFw37iz2KdsK82Yt" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://music.apple.com/us/artist/parsons-cross/1875002108" target="_blank" rel="noopener">Apple</a>
+      <a href="https://music.youtube.com/channel/UCIE9Ev-XaIUOOBqDt3FDeWA?si=J9GC_zHF1zX0_ovO" target="_blank" rel="noopener">YT Music</a>
+    </li>
     <li><a href="https://stevep999.github.io/hello-texas-records/" target="_blank" style="opacity:0.45;font-size:0.62rem;">Hello Texas Records</a></li>
   </ul>
 </nav>
@@ -209,6 +223,11 @@ footer{background:var(--black);border-top:1px solid var(--gold-glow);padding:4re
     <div class="section-eyebrow">About</div>
     <h2 class="section-title">Parsons Cross</h2>
     <div class="gold-rule"></div>
+    <div class="artist-stream-row">
+      <a class="artist-stream-btn" href="https://open.spotify.com/artist/0VMuwXYFw37iz2KdsK82Yt" target="_blank" rel="noopener">Spotify</a>
+      <a class="artist-stream-btn" href="https://music.apple.com/us/artist/parsons-cross/1875002108" target="_blank" rel="noopener">Apple Music</a>
+      <a class="artist-stream-btn" href="https://music.youtube.com/channel/UCIE9Ev-XaIUOOBqDt3FDeWA?si=J9GC_zHF1zX0_ovO" target="_blank" rel="noopener">YouTube Music</a>
+    </div>
   </div>
   <div class="bio-inner">
     <p>Parsons Cross is a Contemporary Christian worship band rooted in honest faith — the kind that doesn't flinch from doubt, grief, or the long stretches where the answers don't come easy.</p>
@@ -307,15 +326,19 @@ footer{background:var(--black);border-top:1px solid var(--gold-glow);padding:4re
 const ARTIST='Parsons Cross',REPO='Parsons-Cross';
 const BASE=`https://raw.githubusercontent.com/SteveP999/${REPO}/main`;
 const SONGS_URL=`${BASE}/songs.json`,LATEST_URL=`${BASE}/latest.json`;
-const ARTIST_STREAMING={spotify:'https://open.spotify.com/artist/0VMuwXYFw37iz2KdsK82Yt',apple:'https://music.apple.com/us/artist/parsons-cross/1875002108',ytm:'https://music.youtube.com/channel/UCIE9Ev-XaIUOOBqDt3FDeWA?si=J9GC_zHF1zX0_ovO'};
+const ARTIST_STREAMING={
+  spotify:'https://open.spotify.com/artist/0VMuwXYFw37iz2KdsK82Yt',
+  apple:'https://music.apple.com/us/artist/parsons-cross/1875002108',
+  ytm:'https://music.youtube.com/channel/UCIE9Ev-XaIUOOBqDt3FDeWA?si=J9GC_zHF1zX0_ovO'
+};
 const STREAMING={
   dark_nights_of_the_soul:{spotify:'https://open.spotify.com/track/4xPhdxLaFDgZ8WRgmwT83a',apple:'https://music.apple.com/us/album/dark-nights-of-the-soul-radio-edit-single/1879509351',ytm:'https://music.youtube.com/watch?v=o9zKgY9Sc7Y'},
   keep_the_son_in_your_eyes:{spotify:'https://open.spotify.com/track/2RvI1BQlpJNfMGJac5t7OP',apple:'https://music.apple.com/us/song/keep-the-son-in-your-eyes/1879451458',ytm:'https://music.youtube.com/watch?v=VIDT67rd5Gs'},
   touching_heaven:{spotify:'https://open.spotify.com/track/2EWQsy0t7ubtC0qOjVmoUq',apple:'https://music.apple.com/us/album/touching-heaven-single/1879442524',ytm:'https://music.youtube.com/watch?v=zJwtCY7bN5E',video:'https://youtu.be/PosylKbcMks'},
-  you_havent_moved:{spotify:'https://open.spotify.com/track/3CatcrQFzckuR1ISvm25hR',apple:'https://music.apple.com/us/song/you-havent-moved/1893891514',ytm:'https://music.youtube.com/watch?v=JSYk_SxbXOI'},
   thick_and_thin:{spotify:'https://open.spotify.com/album/471uwS8eSu1Y8TC5I8ifp5',apple:'https://music.apple.com/us/album/thick-thin-single/1889830890',ytm:'https://music.youtube.com/watch?v=BBccjAaSpMw'},
   the_waiting_room:{spotify:'https://open.spotify.com/track/4LMmbqbsAfWbByPMhukOWd',apple:'https://music.apple.com/us/album/the-waiting-room-single/1879902329',ytm:'https://music.youtube.com/watch?v=aQtH__C7K00'},
   fear:{spotify:'https://open.spotify.com/track/77aG7YsfIf1yBV3Z24qDMY',apple:'https://music.apple.com/us/song/fear/1893895905',ytm:'https://music.youtube.com/watch?v=5GEKVhr7ddo'},
+  you_havent_moved:{spotify:'https://open.spotify.com/track/3CatcrQFzckuR1ISvm25hR',apple:'https://music.apple.com/us/song/you-havent-moved/1893891514',ytm:'https://music.youtube.com/watch?v=JSYk_SxbXOI'},
 };
 let SONGS=[],ORDER=[],cur=null;
 const audio=document.getElementById('audio'),player=document.getElementById('player'),pThumb=document.getElementById('p-thumb');
@@ -380,6 +403,10 @@ function buildTrackArtGrid(tracks){
     </div>
   </div>`;
 }
+function getAlbumStreaming(tracks){
+  // Albums are not released as streaming albums yet, so default album buttons to artist pages.
+  return ARTIST_STREAMING;
+}
 function buildAlbums(songs){
   const map=new Map();
   songs.forEach(s=>{
@@ -395,7 +422,7 @@ function buildAlbums(songs){
   map.forEach((tracks,name)=>{
     const cover=tracks[0].albumCover || tracks[0].cover;
     const isReverse=i%2===1;
-    const str=ARTIST_STREAMING;
+    const str=tracks.map(t=>getStreamingFor(t.id)).find(s=>s&&(s.spotify||s.apple||s.ytm))||{};
     const sec=document.createElement('section');
     sec.className='album-section';
 

@@ -264,9 +264,9 @@ footer{background:var(--black);border-top:1px solid var(--gold-glow);padding:4re
   <img src="https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/PARSONS%20CROSS%20LOGO.png" alt="Parsons Cross" class="foot-logo">
   <div class="foot-label">Hello Texas Records</div>
   <div class="foot-links">
-    <a href="https://open.spotify.com/artist/parsons-cross" target="_blank">Spotify</a>
-    <a href="https://music.apple.com" target="_blank">Apple Music</a>
-    <a href="https://youtube.com" target="_blank">YouTube</a>
+    <a href="https://open.spotify.com/artist/0VMuwXYFw37iz2KdsK82Yt" target="_blank">Spotify</a>
+    <a href="https://music.apple.com/us/artist/parsons-cross/1875002108" target="_blank">Apple Music</a>
+    <a href="https://music.youtube.com/channel/UCIE9Ev-XaIUOOBqDt3FDeWA?si=J9GC_zHF1zX0_ovO" target="_blank">YouTube Music</a>
     <a href="https://instagram.com" target="_blank">Instagram</a>
     <a href="https://stevep999.github.io/hello-texas-records/" target="_blank">Label</a>
   </div>
@@ -307,12 +307,15 @@ footer{background:var(--black);border-top:1px solid var(--gold-glow);padding:4re
 const ARTIST='Parsons Cross',REPO='Parsons-Cross';
 const BASE=`https://raw.githubusercontent.com/SteveP999/${REPO}/main`;
 const SONGS_URL=`${BASE}/songs.json`,LATEST_URL=`${BASE}/latest.json`;
+const ARTIST_STREAMING={spotify:'https://open.spotify.com/artist/0VMuwXYFw37iz2KdsK82Yt',apple:'https://music.apple.com/us/artist/parsons-cross/1875002108',ytm:'https://music.youtube.com/channel/UCIE9Ev-XaIUOOBqDt3FDeWA?si=J9GC_zHF1zX0_ovO'};
 const STREAMING={
   dark_nights_of_the_soul:{spotify:'https://open.spotify.com/track/4xPhdxLaFDgZ8WRgmwT83a',apple:'https://music.apple.com/us/album/dark-nights-of-the-soul-radio-edit-single/1879509351',ytm:'https://music.youtube.com/watch?v=o9zKgY9Sc7Y'},
   keep_the_son_in_your_eyes:{spotify:'https://open.spotify.com/track/2RvI1BQlpJNfMGJac5t7OP',apple:'https://music.apple.com/us/song/keep-the-son-in-your-eyes/1879451458',ytm:'https://music.youtube.com/watch?v=VIDT67rd5Gs'},
   touching_heaven:{spotify:'https://open.spotify.com/track/2EWQsy0t7ubtC0qOjVmoUq',apple:'https://music.apple.com/us/album/touching-heaven-single/1879442524',ytm:'https://music.youtube.com/watch?v=zJwtCY7bN5E',video:'https://youtu.be/PosylKbcMks'},
+  you_havent_moved:{spotify:'https://open.spotify.com/track/3CatcrQFzckuR1ISvm25hR',apple:'https://music.apple.com/us/song/you-havent-moved/1893891514',ytm:'https://music.youtube.com/watch?v=JSYk_SxbXOI'},
   thick_and_thin:{spotify:'https://open.spotify.com/album/471uwS8eSu1Y8TC5I8ifp5',apple:'https://music.apple.com/us/album/thick-thin-single/1889830890',ytm:'https://music.youtube.com/watch?v=BBccjAaSpMw'},
   the_waiting_room:{spotify:'https://open.spotify.com/track/4LMmbqbsAfWbByPMhukOWd',apple:'https://music.apple.com/us/album/the-waiting-room-single/1879902329',ytm:'https://music.youtube.com/watch?v=aQtH__C7K00'},
+  fear:{spotify:'https://open.spotify.com/track/77aG7YsfIf1yBV3Z24qDMY',apple:'https://music.apple.com/us/song/fear/1893895905',ytm:'https://music.youtube.com/watch?v=5GEKVhr7ddo'},
 };
 let SONGS=[],ORDER=[],cur=null;
 const audio=document.getElementById('audio'),player=document.getElementById('player'),pThumb=document.getElementById('p-thumb');
@@ -392,7 +395,7 @@ function buildAlbums(songs){
   map.forEach((tracks,name)=>{
     const cover=tracks[0].albumCover || tracks[0].cover;
     const isReverse=i%2===1;
-    const str=tracks.map(t=>getStreamingFor(t.id)).find(s=>s&&(s.spotify||s.apple||s.ytm))||{};
+    const str=ARTIST_STREAMING;
     const sec=document.createElement('section');
     sec.className='album-section';
 

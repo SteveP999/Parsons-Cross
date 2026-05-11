@@ -153,7 +153,13 @@
     "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/images/covers/parsons-cross-touching-heaven-cover.png",
     "audio": "https://www.dropbox.com/scl/fi/lsd40kwdipq0sxds5yf7o/parsons-cross-touching-heaven-mp3.mp3?rlkey=yleeswhf1tdhrtxeee43z5mye&st=03sxc3ig&raw=1",
     "audioSrc": "https://www.dropbox.com/scl/fi/lsd40kwdipq0sxds5yf7o/parsons-cross-touching-heaven-mp3.mp3?rlkey=yleeswhf1tdhrtxeee43z5mye&st=03sxc3ig&raw=1",
-    "videos": [],
+    "videos": [
+      {
+        "title": "Touching Heaven",
+        "youtube": "https://youtu.be/PosylKbcMks",
+        "order": 1
+      }
+    ],
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,

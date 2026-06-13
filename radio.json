@@ -2,11 +2,11 @@
   "artist": "Parsons Cross",
   "latestUrl": "latest.json",
   "featuredTrack": {
-    "title": "Circle the Wagons",
+    "title": "Wake Up",
     "artist": "Parsons Cross",
     "album": "Into the Light",
-    "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/images/covers/parsons-cross-circle-the-wagons-cover.png",
-    "audioSrc": "https://www.dropbox.com/scl/fi/zv9z8076a6hc13vm8c67z/parsons-cross-circle-the-wagons-mp3.mp3?rlkey=wtv99unlw7flzrtxodxy2n7ho&st=i4v868b3&raw=1",
+    "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/images/covers/parsons-cross-wake-up-cover.png",
+    "audioSrc": "https://www.dropbox.com/scl/fi/o8zegd4d885m6jx0t9gth/parsons-cross-wake-up.mp3?rlkey=uxfobcotdjjt0sskl8o44i7h9&raw=1",
     "videos": []
   },
   "tracks": [
@@ -85,6 +85,11 @@
           "title": "Touching Heaven",
           "youtube": "https://youtu.be/PosylKbcMks",
           "order": 1
+        },
+        {
+          "title": "Touching Heaven",
+          "youtube": "https://youtu.be/kT4DwGIQ-7g",
+          "order": 2
         }
       ]
     },

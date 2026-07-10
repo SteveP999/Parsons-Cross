@@ -3,8 +3,8 @@
   "artist": "Parsons Cross",
   "album": "Into the Light",
   "type": "Latest Single",
-  "cover": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/images/covers/parsons-cross-wake-up-cover.png",
-  "image": "https://raw.githubusercontent.com/SteveP999/Parsons-Cross/main/images/covers/parsons-cross-wake-up-cover.png",
+  "cover": "images/covers/parsons-cross-wake-up-cover.png",
+  "image": "images/covers/parsons-cross-wake-up-cover.png",
   "audio": "https://www.dropbox.com/scl/fi/o8zegd4d885m6jx0t9gth/parsons-cross-wake-up.mp3?rlkey=uxfobcotdjjt0sskl8o44i7h9&raw=1",
   "audioSrc": "https://www.dropbox.com/scl/fi/o8zegd4d885m6jx0t9gth/parsons-cross-wake-up.mp3?rlkey=uxfobcotdjjt0sskl8o44i7h9&raw=1",
   "videos": []

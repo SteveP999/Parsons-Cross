@@ -17,7 +17,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "fear",
@@ -37,7 +38,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "lost_wheres_god",
@@ -57,16 +59,38 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
-    "id": "the_waiting_room",
+    "id": "parsons-cross-the-message",
     "num": "04",
-    "title": "The Waiting Room",
+    "title": "The Message",
     "artist": "Parsons Cross",
     "album": "Into the Light",
     "trackNumber": 4,
     "albumOrder": 4,
+    "albumCover": "images/covers/parsons-cross-into-the-light-ALBUM-cover.png",
+    "type": "single",
+    "isLatest": true,
+    "cover": "images/covers/parsons-cross-the-message-cover.png",
+    "audio": "https://www.dropbox.com/scl/fi/z7brw4yvmkr5t0fe0w26n/parsons-cross-the-message-MP3.mp3?rlkey=4d6588zbscffa0hfn9nyf9zlw&raw=1",
+    "audioSrc": "https://www.dropbox.com/scl/fi/z7brw4yvmkr5t0fe0w26n/parsons-cross-the-message-MP3.mp3?rlkey=4d6588zbscffa0hfn9nyf9zlw&raw=1",
+    "videos": [],
+    "includeOnRadio": true,
+    "includeOnHomepage": true,
+    "explicit": false,
+    "tags": [],
+    "streaming": {}
+  },
+  {
+    "id": "the_waiting_room",
+    "num": "05",
+    "title": "The Waiting Room",
+    "artist": "Parsons Cross",
+    "album": "Into the Light",
+    "trackNumber": 5,
+    "albumOrder": 5,
     "albumCover": "images/covers/parsons-cross-into-the-light-ALBUM-cover.png",
     "type": "single",
     "isLatest": false,
@@ -77,19 +101,20 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "parsons-cross-wake-up",
-    "num": "05",
+    "num": "06",
     "title": "Wake Up",
     "artist": "Parsons Cross",
     "album": "Into the Light",
-    "trackNumber": 5,
-    "albumOrder": 5,
+    "trackNumber": 6,
+    "albumOrder": 6,
     "albumCover": "images/covers/parsons-cross-into-the-light-ALBUM-cover.png",
     "type": "single",
-    "isLatest": true,
+    "isLatest": false,
     "cover": "images/covers/parsons-cross-wake-up-cover.png",
     "audio": "https://www.dropbox.com/scl/fi/o8zegd4d885m6jx0t9gth/parsons-cross-wake-up.mp3?rlkey=uxfobcotdjjt0sskl8o44i7h9&raw=1",
     "audioSrc": "https://www.dropbox.com/scl/fi/o8zegd4d885m6jx0t9gth/parsons-cross-wake-up.mp3?rlkey=uxfobcotdjjt0sskl8o44i7h9&raw=1",
@@ -97,16 +122,17 @@
     "includeOnRadio": true,
     "includeOnHomepage": true,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "dark_nights_of_the_soul",
-    "num": "06",
+    "num": "07",
     "title": "Dark Nights of the Soul",
     "artist": "Parsons Cross",
     "album": "Out of the Darkness",
-    "trackNumber": 6,
-    "albumOrder": 6,
+    "trackNumber": 7,
+    "albumOrder": 7,
     "albumCover": "images/covers/parsons-cross-out-of-the-darkness-ALBUM-cover.png",
     "type": "single",
     "isLatest": false,
@@ -117,16 +143,17 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "keep_the_son_in_your_eyes",
-    "num": "07",
+    "num": "08",
     "title": "Keep the Son In Your Eyes",
     "artist": "Parsons Cross",
     "album": "Out of the Darkness",
-    "trackNumber": 7,
-    "albumOrder": 7,
+    "trackNumber": 8,
+    "albumOrder": 8,
     "albumCover": "images/covers/parsons-cross-out-of-the-darkness-ALBUM-cover.png",
     "type": "single",
     "isLatest": false,
@@ -137,16 +164,17 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "thick_and_thin",
-    "num": "08",
+    "num": "09",
     "title": "Thick & Thin",
     "artist": "Parsons Cross",
     "album": "Out of the Darkness",
-    "trackNumber": 8,
-    "albumOrder": 8,
+    "trackNumber": 9,
+    "albumOrder": 9,
     "albumCover": "images/covers/parsons-cross-out-of-the-darkness-ALBUM-cover.png",
     "type": "single",
     "isLatest": false,
@@ -157,16 +185,17 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "touching_heaven",
-    "num": "09",
+    "num": "10",
     "title": "Touching Heaven",
     "artist": "Parsons Cross",
     "album": "Out of the Darkness",
-    "trackNumber": 9,
-    "albumOrder": 9,
+    "trackNumber": 10,
+    "albumOrder": 10,
     "albumCover": "images/covers/parsons-cross-out-of-the-darkness-ALBUM-cover.png",
     "type": "single",
     "isLatest": false,
@@ -188,16 +217,17 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "you_havent_moved",
-    "num": "10",
+    "num": "11",
     "title": "You Haven't Moved",
     "artist": "Parsons Cross",
     "album": "Out of the Darkness",
-    "trackNumber": 10,
-    "albumOrder": 10,
+    "trackNumber": 11,
+    "albumOrder": 11,
     "albumCover": "images/covers/parsons-cross-out-of-the-darkness-ALBUM-cover.png",
     "type": "single",
     "isLatest": false,
@@ -208,6 +238,7 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   }
 ]

@@ -2,11 +2,11 @@
   "artist": "Parsons Cross",
   "latestUrl": "latest.json",
   "featuredTrack": {
-    "title": "Wake Up",
+    "title": "The Message",
     "artist": "Parsons Cross",
     "album": "Into the Light",
-    "cover": "images/covers/parsons-cross-wake-up-cover.png",
-    "audioSrc": "https://www.dropbox.com/scl/fi/o8zegd4d885m6jx0t9gth/parsons-cross-wake-up.mp3?rlkey=uxfobcotdjjt0sskl8o44i7h9&raw=1",
+    "cover": "images/covers/parsons-cross-the-message-cover.png",
+    "audioSrc": "https://www.dropbox.com/scl/fi/z7brw4yvmkr5t0fe0w26n/parsons-cross-the-message-MP3.mp3?rlkey=4d6588zbscffa0hfn9nyf9zlw&raw=1",
     "videos": []
   },
   "tracks": [
@@ -32,6 +32,14 @@
       "album": "Into the Light",
       "cover": "images/covers/parsons-cross-lost-wheres-god-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/aucayb7h1iimytjaxapwo/parsons-cross-lost-wheres-god-mp3.mp3?rlkey=fbxd0i8l4hax25r4k6f4fk65s&raw=1",
+      "videos": []
+    },
+    {
+      "title": "The Message",
+      "artist": "Parsons Cross",
+      "album": "Into the Light",
+      "cover": "images/covers/parsons-cross-the-message-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/z7brw4yvmkr5t0fe0w26n/parsons-cross-the-message-MP3.mp3?rlkey=4d6588zbscffa0hfn9nyf9zlw&raw=1",
       "videos": []
     },
     {

@@ -90,14 +90,9 @@
       "audioSrc": "https://www.dropbox.com/scl/fi/lsd40kwdipq0sxds5yf7o/parsons-cross-touching-heaven-mp3.mp3?rlkey=yleeswhf1tdhrtxeee43z5mye&st=03sxc3ig&raw=1",
       "videos": [
         {
-          "title": "Touching Heaven",
           "youtube": "https://youtu.be/PosylKbcMks",
+          "title": "Official Video",
           "order": 1
-        },
-        {
-          "title": "Touching Heaven",
-          "youtube": "https://youtu.be/kT4DwGIQ-7g",
-          "order": 2
         }
       ]
     },
